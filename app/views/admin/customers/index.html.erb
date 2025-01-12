@@ -1,0 +1,13 @@
+<h1>List Customer</h1>
+<%@customers%>
+
+
+<%= tag.h1 "Available Customer List" %>
+
+<div class="customer-list">
+  <% @customers.each do |cus| %>
+    <div class="customer-item">
+      <%= link_to "#{cus.first_name} #{cus.last_name}", admin_customer_path(cus), class: "custmer-link" %>
+    </div>
+  <% end %>
+</div>

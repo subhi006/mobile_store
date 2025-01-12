@@ -1,0 +1,15 @@
+<%= tag.h1 "Hi, Welcome to the Product Page!" %>
+
+<div class="actions">
+  <%= link_to "Create New Product", new_admin_product_path, class: "btn btn-primary" %>
+</div>
+
+<%= tag.h1 "Available Product List" %>
+
+<div class="product-list">
+  <% @product.each do |pro| %>
+    <div class="product-item">
+      <%= link_to pro.name, admin_product_path(pro), class: "product-link" %>
+    </div>
+  <% end %>
+</div>

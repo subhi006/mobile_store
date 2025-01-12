@@ -1,0 +1,17 @@
+<div style="display: inline;">
+  <%= tag.p "Name: #{@product.name}" %>
+</div>
+
+<div>
+  <%= tag.p "Version: #{@product.version}" %>
+  <%= tag.p "Company: #{@product.company}" %>
+  <%= tag.p "Price: #{@product.price}" %>
+  <%= tag.p "Storage: #{@product.storage}" %>
+</div>
+
+<div class="product-actions">
+  <%= link_to "Edit Product", edit_admin_product_path(@product), class: "btn btn-primary" %>
+  <%= button_to "Delete", admin_product_path(@product), method: :delete, 
+      class: "btn btn-danger", 
+      data: { turbo_confirm: "Are you sure?" } %>
+</div>
